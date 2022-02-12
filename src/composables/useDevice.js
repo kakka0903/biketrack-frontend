@@ -5,7 +5,7 @@ export function useDevice (deviceName) {
 
   // get update frequency or set to default value
   var update_frequency = import.meta.env.VITE_DEVICE_UPDATE_FREQ
-  update_frequency = 5 ? !update_frequency : update_frequency
+  update_frequency = !update_frequency ? 5 : update_frequency
 
   const data = ref(null)
   const error = ref(null)
