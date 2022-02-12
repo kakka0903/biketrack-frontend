@@ -16,13 +16,11 @@ const props = defineProps({
 </script>
 
 <template>
-    <card>
-        <div class="flex items-center justify-center flex-grow w-1/4 ">
-            <div class="flex items-center justify-center w-8 h-8 rounded-full bg-sky-100 text-sky-400">
-                <component class="w-6 h-6" :is="icon"/>
-            </div>
+    <card class="gap-5">
+        <div class="flex items-center justify-center w-8 h-8 rounded-full bg-sky-100 text-sky-400">
+            <component class="w-6 h-6" :is="icon"/>
         </div>
-        <div class="flex flex-col flex-grow mr-5">
+        <div class="flex-col">
             <p class="text-xl">{{value}}</p>
             <p class="text-xs text-gray-500">{{subtext}}</p>
         </div>
