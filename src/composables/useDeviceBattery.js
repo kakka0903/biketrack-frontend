@@ -1,4 +1,4 @@
-import { ref, watchEffect, watch, computed } from 'vue'
+import { ref, watch, computed } from 'vue'
 
 export function useDeviceBattery (deviceDataRef) {
   const batteryVoltage = ref(null)
