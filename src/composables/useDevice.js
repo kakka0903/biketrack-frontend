@@ -11,17 +11,15 @@ export function useDevice (deviceName) {
   const error = ref(null)
 
   var api_url = import.meta.env.VITE_API_URL
-  var post_data = { device_name: deviceName }
 
   // fetching the data
   function doFetch () {
-    fetch(api_url + '/api/latest', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(post_data)
+    fetch(api_url + '/api/' + deviceName + '/data/last', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
     })
       .then(res => res.json())
-      .then(json => (data.value = json[deviceName]))
+      .then(json => (data.value = json))
       .catch(err => (error.value = err))
       .finally(() => {
         // update again after a given delay

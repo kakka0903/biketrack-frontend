@@ -13,8 +13,8 @@ export function useDeviceTimeSinceUpdate (deviceDataRef) {
   })
 
   watch(deviceDataRef, data => {
-    if (data['data']) {
-      timeSinceUpdate.value = data['data']['time']
+    if (data) {
+      timeSinceUpdate.value = data['secs_since_update']
     }
     if (!isTicking.value) {
       tickTime()
